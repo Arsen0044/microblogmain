@@ -1,5 +1,8 @@
 FROM python:slim
 
+RUN apt update
+RUN apt install build-essential
+RUN apt install libpq-dev
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install gunicorn pymysql cryptography
